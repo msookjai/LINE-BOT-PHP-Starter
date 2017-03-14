@@ -17,10 +17,15 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if ($text == 'show me my id'){
+			if ($text == 'show me my id' || $text == 'Show my my id'){
 				$messages = [
 					'type' => 'text',
 					'text' => 'Your ID is '.$event['source']['userId']
+				];
+			}else if ($text == 'show me group id' || $text == 'Show my group id'){
+				$messages = [
+					'type' => 'text',
+					'text' => 'Your ID is '.$event['source']['groupId']
 				];
 			}else {
 				$messages = [
